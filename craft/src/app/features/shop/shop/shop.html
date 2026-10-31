@@ -1,0 +1,24 @@
+<section class="page-header">
+    <h2>#Stayhome</h2>
+    <p>Save more with coupons & up to 70% off!</p>
+</section>
+
+<section class="product-section1">
+    <h2>Feature Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="product-feat">
+        <div class="prod" *ngFor="let prod of Items">
+            <img [src]="prod.mainImage" alt="hello">
+            <div class="descrip">
+                <span>{{prod.brandName}}</span>
+                <h5>{{prod.prodCategory}}</h5>
+                <h4>Rs.{{prod.prodPrice}}</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="paginaton">
+    <i class="bi bi-arrow-left-square-fill" (click)="decValue()"></i>
+    <i class="bi bi-arrow-right-square-fill" (click)="increaseValue()"></i>
+</section>

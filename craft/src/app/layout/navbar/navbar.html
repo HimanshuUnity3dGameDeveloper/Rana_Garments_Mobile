@@ -1,0 +1,18 @@
+<section class="header">
+    <img src="assets/img/Logo.png" alt="logo">
+    <div>
+        <ul id="navbar" [class.active]="isNavbarActive">
+            <li><a [class.active]="selectedTab === 'home'" (click)="getTab('home')">Home</a></li>
+            <li><a [class.active]="selectedTab === 'shop'" (click)="getTab('shop')">Shop</a></li>
+            <li><a [class.active]="selectedTab === 'blog'" (click)="getTab('blog')">Blog</a></li>
+            <li><a [class.active]="selectedTab === 'about'" (click)="getTab('about')">About</a></li>
+            <li><a [class.active]="selectedTab === 'contact'" (click)="getTab('contact')">Contact</a></li>
+            <li id="lg-bag"><a [class.active]="selectedTab === 'cart'" (click)="getTab('cart')"><i class="bi bi-cart"></i></a></li>
+            <a id="close" (click)="closeNavbar()"><i class="bi bi-x-lg"></i></a>
+        </ul>
+    </div>
+    <div id="mobile">
+        <a [class.active]="selectedTab === 'cart'" (click)="getTab('cart')"><i class="bi bi-cart"></i></a>
+        <a (click)="openNavbar()"><i id="bar" class="bi bi-list"></i></a>
+    </div>
+</section>

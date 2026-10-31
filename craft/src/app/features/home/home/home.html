@@ -1,0 +1,101 @@
+<section class="hero-section">
+    <h4>Trade-in-offer</h4>
+    <h2>Super value deals</h2>
+    <h1>On all products</h1>
+    <p>Save more with coupons & up to 70% off!</p>
+    <button>Shop Now</button>
+</section>
+
+<section class="feature-section">
+    <div class="feature-box">
+        <img src="assets/img/features/f1.png" alt="reload">
+        <h6>Free Shipping</h6>
+    </div>
+    <div class="feature-box">
+        <img src="assets/img/features/f2.png" alt="reload">
+        <h6>Online Order</h6>
+    </div>
+    <div class="feature-box">
+        <img src="assets/img/features/f3.png" alt="reload">
+        <h6>Save Money</h6>
+    </div>
+    <div class="feature-box">
+        <img src="assets/img/features/f4.png" alt="reload">
+        <h6>Promotions</h6>
+    </div>
+    <div class="feature-box">
+        <img src="assets/img/features/f5.png" alt="reload">
+        <h6>Happy Sell</h6>
+    </div>
+    <div class="feature-box">
+        <img src="assets/img/features/f6.png" alt="reload">
+        <h6>24 /7 Support</h6>
+    </div>
+</section>
+
+<section class="product-section1">
+    <h2>Feature Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="product-feat">
+        <div class="prod" *ngFor="let prod of tshirts">
+            <img [src]="prod.mainImage" alt="hello">
+            <div class="descrip">
+                <span>{{prod.brandName}}</span>
+                <h5>{{prod.prodCategory}}</h5>
+                <h4>Rs.{{prod.prodPrice}}</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner-section">
+    <h4>Repair Service</h4>
+    <h2>Up to <span>70% Off</span>-All t-Shirts & Accesories</h2>
+    <button class="normal">Explore More</button>
+</section>
+
+<section class="product-section2">
+    <h2>New Arrival</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="product-feat">
+        <div class="prod" *ngFor="let prod of shirts">
+            <img [src]="prod.mainImage" alt="hello">
+            <div class="descrip">
+                <span>{{prod.brandName}}</span>
+                <h5>{{prod.prodCategory}}</h5>
+                <h4>Rs.{{prod.prodPrice}}</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sm-banner">
+    <div class="banner-box">
+        <h4>crazy deals</h4>
+        <h2>buy 2 get 1 free</h2>
+        <span>The best classic dress is on sale at Rana Garments.</span>
+        <button class="white">Learn More</button>
+    </div>
+
+    <div class="banner-box">
+        <h4>crazy deals</h4>
+        <h2>buy 2 get 1 free</h2>
+        <span>The best classic dress is on sale at Rana Garments.</span>
+        <button class="white">Learn More</button>
+    </div>
+</section>
+
+<section class="banner-section2">
+    <div class="banner-box">
+        <h2>SEASONAL SALE</h2>
+        <h3>Winter Collection -50% off</h3>
+    </div>
+    <div class="banner-box">
+        <h2>SEASONAL SALE</h2>
+        <h3>Winter Collection -50% off</h3>
+    </div>
+    <div class="banner-box">
+        <h2>SEASONAL SALE</h2>
+        <h3>Winter Collection -50% off</h3>
+    </div>
+</section>
