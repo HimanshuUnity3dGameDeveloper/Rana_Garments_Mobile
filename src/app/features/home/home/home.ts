@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
+export class Home implements OnInit{
 
   items: any[] = [
     {id:1, category:"T-shirt", brandName:'adidas', mainImage:'assets/img/products/f1.jpg', prodCategory:"Cartoon colored T-Shirt", rating:`5/5`, prodPrice:150, description:"The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per.sq.yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package"},
@@ -28,11 +29,28 @@ export class Home {
     {id:16, category:"shirt", brandName:'adidas', mainImage:'assets/img/products/n8.jpg', prodCategory:"Dark Gray Plan Shirt", rating:`5/5`, prodPrice:230, description:"The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per.sq.yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package"}      
   ];
 
+  constructor(
+    private readonly router: Router,
+    @Inject(PLATFORM_ID) private platformId: object
+  ){
+    
+  }
+
+  ngOnInit(): void {
+    if(isPlatformBrowser(this.platformId)){
+      localStorage.setItem('items', JSON.stringify(this.items));
+    }
+  }
   get tshirts() {
     return this.items.filter(prod => prod.category === 'T-shirt');
   }
 
   get shirts(){
     return this.items.filter(prod => prod.category === 'shirt');
+  }
+
+  getSelectedItem(item: string){
+    localStorage.setItem('selected_item', JSON.stringify(item));
+    this.router.navigate(['./sproduct'])
   }
 }

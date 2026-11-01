@@ -3,12 +3,12 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 20px;
     margin: 20px 0;
 
     background-image: url('/assets/img/banner/b14.png');
     background-repeat: no-repeat;
-    background-position: 20% 30%;
+    background-position: center;
     background-color: #041e42;
 
     .news-text h4{
@@ -55,6 +55,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0 20px;
+    
     .col{
         display: flex;
         flex-direction: column;

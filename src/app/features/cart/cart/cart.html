@@ -1,1 +1,21 @@
-<p>cart works!</p>
+<section class="cart-section">
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>PRODUCT</th>
+                <th>IMAGE</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>SUBTOTAL</th>
+                <th>REMOVE</th>
+            </tr>
+        </thead>
+        <tbody id="cart_body">
+            <tr>
+                <td *ngFor="let prod of itemlist">
+                    <img [src]="" alt="">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -21,5 +21,8 @@ export const routes: Routes = [
     },
     {
         path:'cart', loadChildren: ()=> import('./features/cart/cart-module').then(m => m.CartModule)
+    },
+    {
+        path:'sproduct', loadChildren: ()=> import('./features/single-product/single-product-module').then(m => m.SingleProductModule)
     }
 ];

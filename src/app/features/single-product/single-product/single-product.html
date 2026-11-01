@@ -1,0 +1,37 @@
+<section class="product-detail">
+    <div class="single-prod">
+        <img [src]="mainImage" width="100%" alt="">
+    </div>
+    <div class="prod-description">
+        <h4>{{prodCategory}}</h4>
+        <h2>Rs{{prodPrice}}</h2>
+        <form (ngSubmit)="onAddToCart()">
+            <select [(ngModel)]="selectedSize" name="selectedSize" required>
+                <option value="" disabled selected>Select Size</option>
+                <option value="Small">Small</option>
+                <option value="Large">Large</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+            <input type="number" [(ngModel)]="quantity" name="quantity" min="1">
+            <button class="normal" type="submit">Add to Cart</button>
+        </form>
+        <h4>Product Details</h4>
+        <span>{{description}}</span>
+    </div>
+</section>
+
+<section class="product-section1">
+    <h2>Related Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="product-feat">
+        <div class="prod" *ngFor="let prod of getAllItems" (click)="getSelectedItem(prod)">
+            <img [src]="prod.mainImage" alt="hello">
+            <div class="descrip">
+                <span>{{prod.brandName}}</span>
+                <h5>{{prod.prodCategory}}</h5>
+                <h4>Rs.{{prod.prodPrice}}</h4>
+            </div>
+        </div>
+    </div>
+</section>

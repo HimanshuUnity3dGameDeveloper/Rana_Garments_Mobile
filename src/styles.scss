@@ -1,4 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'spartan', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
 // Normal Button
 .normal{
     font-size: 14px;
@@ -43,5 +78,70 @@
     p{
         color: #fff;
         font-size: 25px;
+    }
+}
+
+.product-section1, 
+.product-section2{
+    text-align: center;
+
+    .product-feat{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        .prod{
+            width: 23%;
+            min-width: 250px;
+            padding: 10px 12px;
+            border: 1px solid #cce7d0;
+            border-radius: 25px;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+            margin: 15px 0;
+            transition: 0.2s ease;
+        
+            &:hover{
+                box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+            }
+
+            img{
+                width: 100%;
+                border-radius: 20px;
+            }
+
+            .descrip{
+                text-align: start;
+                padding: 10px 0;
+
+                span{
+                    color: #606063;
+                    font-size: 12px;
+                    margin: 0;
+                }
+
+                h5{
+                    color: #1a1a1a;
+                    padding-top: 7px;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                h4{
+                    color: #1a1a1a;
+                    padding-top: 7px;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                i{
+                    font-size: 14px;
+                    color: rgb(243, 181, 25);
+                    margin: 0;
+                }
+            }
+        }
     }
 }
