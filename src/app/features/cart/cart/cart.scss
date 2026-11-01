@@ -1,5 +1,5 @@
 .cart-section{
-    padding: 0 20px;
+    padding: 20px;
     overflow-x: scroll;
 
     table{
@@ -37,14 +37,16 @@
             background-color: #cdd4f8;
 
             th{
-                padding: 18px 0;
-                font-size: 18px;
+                padding: 5px 0;
+                font-size: 14px;
+                border: 1px solid rgba(82, 81, 81, 0.5);
             }
         }
 
         tbody tr td{
-            padding: 15px 0;
             font-size: 13px;
+            border: 1px solid rgba(82, 81, 81, 0.5);
+            background-color: rgba(192, 192, 192, 0.514);
         }
 
         tbody input{

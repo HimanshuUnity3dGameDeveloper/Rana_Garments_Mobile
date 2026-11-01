@@ -32,6 +32,10 @@ export class SingleProduct implements OnInit{
     this.loadProduct();
   }
 
+  ionViewWillEnter(){
+    this.loadProduct();
+  }
+
   loadProduct(){
     if (isPlatformBrowser(this.platformId)) {
       const data = localStorage.getItem('selected_item');
@@ -55,10 +59,26 @@ export class SingleProduct implements OnInit{
     }
   }
 
-  onAddToCart(){
-    const carts = [];
-    carts.push({id:this.prod_id, mainImage:this.mainImage, prodName: this.prodCategory, prod_Price: this.prodPrice, quantity: this.quantity, size: this.selectedSize})
-    localStorage.setItem('cart_list', JSON.stringify(carts));
+  onAddToCart(product: any){
+    let carts: any[] = [];    
+    if(localStorage.getItem('cart_list')){
+      const list = localStorage.getItem('cart_list');
+      carts = list ? JSON.parse(list) : null;
+    }
+
+    if(carts.length === 0){
+      carts.push({id:this.prod_id, mainImage:this.mainImage, prodName: this.prodCategory, prod_Price: this.prodPrice, quantity: this.quantity, size: this.selectedSize});
+      localStorage.setItem('cart_list', JSON.stringify(carts));
+    }else{
+      const elementExist = carts.find(prod => prod.prodName === product);
+      if(elementExist){
+        elementExist.quantity++;
+      }else{
+        carts.push({id:this.prod_id, mainImage:this.mainImage, prodName: this.prodCategory, prod_Price: this.prodPrice, quantity: this.quantity, size: this.selectedSize});
+      }
+      
+      localStorage.setItem('cart_list', JSON.stringify(carts));
+    }
     this.router.navigate(['./cart']);
   }
 

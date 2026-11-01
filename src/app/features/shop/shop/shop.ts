@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -32,8 +33,9 @@ export class Shop {
     {id:16, category:"shirt", brandName:'adidas', mainImage:'assets/img/products/n8.jpg', prodCategory:"Dark Gray Plan Shirt", rating:`5/5`, prodPrice:230, description:"The Gildan Ultra Cotton T-shirt is made from a substantial 6.0 oz. per.sq.yd. fabric constructed from 100% cotton, this classic fit preshrunk jersey knit provides unmatched comfort with each wear. Featuring a taped neck and shoulder, and a seamless double needle collar, and available in a range of colors, it offers it all in the ultimate head-turning package"}      
   ];
 
-
-  constructor(){
+  constructor(
+    private readonly router: Router,
+  ){
     this.loadItem();
   }
 
@@ -59,5 +61,10 @@ export class Shop {
       this.initial = 0;
       this.loadItem();
     }
+  }
+
+  getSelectedItem(item: string){
+    localStorage.setItem('selected_item', JSON.stringify(item));
+    this.router.navigate(['./sproduct'])
   }
 }

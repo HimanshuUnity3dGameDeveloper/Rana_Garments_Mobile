@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
@@ -20,14 +20,7 @@ export class NavBar implements OnInit {
     
   }
 
-  selectedTab = 'home';
   activeNav = false;
-
-  getTab(nav: string){
-    this.selectedTab = nav;
-    this.isNavbarActive = false
-    this.router.navigate([nav]);
-  }
 
   openNavbar(){
     this.isNavbarActive = true;

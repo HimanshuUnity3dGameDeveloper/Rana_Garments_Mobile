@@ -11,10 +11,13 @@
             </tr>
         </thead>
         <tbody id="cart_body">
-            <tr>
-                <td *ngFor="let prod of itemlist">
-                    <img [src]="" alt="">
-                </td>
+            <tr *ngFor="let prod of itemlist">                
+                <td>{{prod.prodName}}</td>
+                <td><img [src]="prod.mainImage" alt=""></td>
+                <td>{{prod.prod_Price}}</td>
+                <td>{{prod.quantity}}</td>
+                <td>{{totalPay}}</td>
+                <td><a (click)="removeItem(prod.id)"><i class="bi bi-x-lg"></i></a></td>
             </tr>
         </tbody>
     </table>
